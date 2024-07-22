@@ -45,7 +45,7 @@ public:
         other.value = 0;
         std::cout << "Move assignment operator called" << std::endl;
         return *this;
-    }
+    } 
 
     // 析构函数
     ~Widget() {
@@ -68,15 +68,19 @@ int main() {
     w2.print();
 
     // 使用拷贝构造函数
+    std::cout << "w3 = w2 拷贝构造函数" << std::endl;
     Widget w3 = w2;
     w3.print();
 
+
     // 使用赋值运算符
+    std::cout << "w4 = w2 赋值运算符" << std::endl;
     Widget w4;
     w4 = w2;
     w4.print();
 
     // 使用移动构造函数
+    std::cout << "w5  移动运算符" << std::endl;
     Widget w5 = std::move(w2);
     w5.print();
     w2.print(); // w2 的值应为 0
